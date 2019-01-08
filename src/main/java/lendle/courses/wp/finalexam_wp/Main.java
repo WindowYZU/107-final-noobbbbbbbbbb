@@ -5,9 +5,17 @@
  */
 package lendle.courses.wp.finalexam_wp;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 
 /**
  *
@@ -106,6 +114,16 @@ public class Main extends javax.swing.JFrame {
         DefaultListModel model = (DefaultListModel) this.jList1.getModel();
         if (model.contains(title)) {
             //Q1: 開啟 message dialog （10%）
+            JFrame frame =new JFrame();
+            JButton bt=new JButton("click");
+            bt.addActionListener(new ActionListener() {
+               @Override
+               public void actionPerformed(ActionEvent e) {
+                   JOptionPane.showMessageDialog(frame,"不可以重複");
+                }
+
+            
+            
             
             ////////////////////
             return;
@@ -114,6 +132,17 @@ public class Main extends javax.swing.JFrame {
         model.addElement(title);
         //Q2: 建立 TaskFrame（等同於 JInternalFrame）
         //加到 jDesktopPane1 (20%)
+        JFrame frame=new JFrame();
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setSize(500, 500);
+        frame.setLayout(new BorderLayout());
+        
+        JDesktopPane jDesktopPane=new JDesktopPane();
+        frame.setContentPane(jDesktopPane);
+        JInternalFrame internalFrame=new JInternalFrame("internalframe1", true, true, true, true);
+        internalFrame.setSize(300, 300);
+        internalFrame.setVisible(true);
+        frame.add(internalFrame);
         
         ///////////////////////////////////////
     }//GEN-LAST:event_buttonNewActionPerformed
@@ -133,6 +162,17 @@ public class Main extends javax.swing.JFrame {
             //Q3: 建立 TaskFrame（等同於 JInternalFrame）
             //設定 noteTitle, noteContent
             //加到 jDesktopPane1 (20%)
+            JFrame frame=new JFrame();
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setSize(500, 500);
+        frame.setLayout(new BorderLayout());
+        
+        JDesktopPane jDesktopPane=new JDesktopPane();
+        frame.setContentPane(jDesktopPane);
+        JInternalFrame internalFrame=new JInternalFrame("internalframe1", true, true, true, true);
+        internalFrame.setSize(300, 300);
+        internalFrame.setVisible(true);
+        frame.add(internalFrame);
             
             //////////////////////////////////////////
         }
