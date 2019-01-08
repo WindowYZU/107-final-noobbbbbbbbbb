@@ -43,8 +43,8 @@ public class TaskFrame extends JInternalFrame {
         JFrame frame=new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setSize(500, 500);
-        FlowLayout layout=new FlowLayout();
-        frame.setLayout(layout);
+        BorderLayout layout=new BorderLayout();
+        frame.setLayout(new BorderLayout());
         ////////////////////////////
         this.setClosable(true);
         this.setResizable(true);
